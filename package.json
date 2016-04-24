@@ -1,0 +1,25 @@
+{
+  "name": "nodeauthserver",
+  "version": "1.0.0",
+  "description": "API server built with node for authentication with a React App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qSam/NodeAuthServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qSam/NodeAuthServer/issues"
+  },
+  "homepage": "https://github.com/qSam/NodeAuthServer#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.13",
+    "morgan": "^1.7.0"
+  }
+}
