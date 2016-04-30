@@ -15,6 +15,11 @@ const localLogin = new LocalStrategy(localOptions, function(email, pass, done){
   User.findOne({email: email}, function(err, user){
     if (err) { return done(err); }
 
+    if(!user) { return done(null, false); }
+
+    //Compare passwords
+    
+
   });
 
 });
