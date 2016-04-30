@@ -10,6 +10,7 @@ function tokenForUser(user) {
 exports.signin = function(req,res,next) {
   // User already has signed up
   // Need to provide JWT Token
+  res.send({token: tokenForUser(req.user)});
 }
 
 exports.signup = function(req,res,next) {
