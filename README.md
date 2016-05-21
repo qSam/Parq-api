@@ -9,11 +9,11 @@ Creating a API Server
 
 2) Install Express : npm install --save express
 
-3) Install Mongooes to talk to MongoDB: npm install --save mongoose
+3) Install Mongoose to talk to MongoDB: npm install --save mongoose
 
 4) npm install --save body-parser (For parsing JSON requests and responses)
 
-5) npm install --save morgan
+5) npm install --save morgan (Logging framework)
 
 6) Complete Server setups
 
