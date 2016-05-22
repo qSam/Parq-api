@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 exports.getUser = function(req,res, next) {
-  const email = req.params.email;
+  const email = req.params.id;
 
   User.findOne({email:email},function(err, userFound){
 

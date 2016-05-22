@@ -18,9 +18,10 @@ module.exports = function(app) {
 
   // Posts routes
   app.get('/getAllPosts', Posts.getAllPosts);
+  app.put('/updateUserPosts/:id', Posts.updateUserPost);
 
   //User routes
-  app.get('/getUser/:email',Users.getUser);
+  app.get('/getUser/:id',Users.getUser);
   app.get('/getAllUsers', Users.getAllUsers);
 
   //Sign in routes
