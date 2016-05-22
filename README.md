@@ -20,3 +20,7 @@ Creating a API Server
 7) Complete App Middleware setups
 
 8) npm install --save nodemon for automatically restarting node server after file changes
+
+9) Define Mongoose Models for MongoDB Documents
+
+10) Install and Setup MongoDB. Run mongod command to start mongoDB

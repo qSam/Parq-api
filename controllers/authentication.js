@@ -17,6 +17,7 @@ exports.signup = function(req,res,next) {
   //Check if a user exists
   const email = req.body.email;
   const password = req.body.password;
+  const username = req.body.username;
 
   if (!email || !password) {
     return res.status(422).send({ error: 'You must provide email and password'});
@@ -34,7 +35,8 @@ exports.signup = function(req,res,next) {
       //If new user, create and save user record
       const user = new User({
         email: email,
-        password: password
+        password: password,
+        username: username
       });
 
       user.save(function(err){

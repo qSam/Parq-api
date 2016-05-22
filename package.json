@@ -1,5 +1,5 @@
 {
-  "name": "nodeauthserver",
+  "name": "parq-api",
   "version": "1.0.0",
   "description": "API server built with node for authentication with a React App",
   "main": "index.js",
