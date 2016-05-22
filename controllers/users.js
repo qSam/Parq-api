@@ -1,0 +1,27 @@
+const User = require('../models/user');
+
+exports.getUser = function(req,res, next) {
+  const email = req.params.email;
+
+  User.findOne({email:email},function(err, userFound){
+
+  if(err) { return next(err) }
+
+  if(userFound) {
+  res.send(userFound);
+  } else {
+    res.send('User does not exist');
+  }
+
+});
+}
+
+exports.getAllUsers = function(req,res, next) {
+  User.find(function(err, users){
+    if (err) { return next(err) }
+
+    res.send(users);
+
+  });
+
+}
