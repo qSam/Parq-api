@@ -1,11 +1,21 @@
 const User = require('../models/user');
 
-exports.getAllPosts = function(req,res,next) {
+exports.getAllUserPosts = function(req,res,next) {
   // Get All Posts
-  res.send("Hey There ! I guess you need all posts");
+  const email = req.params.id;
+
+  User.findOne({email:email}, function(err,user){
+    if (err) { return next(err) }
+
+    if(user) {
+      res.send(user.posts);
+    } else {
+      res.send('User not found');
+    }
+  });
 }
 
-exports.updateUserPost = function(req, res, next) {
+exports.addNewUserPost = function(req, res, next) {
   const email = req.params.id;
   const post= req.body.post;
 

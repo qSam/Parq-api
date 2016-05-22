@@ -17,8 +17,8 @@ module.exports = function(app) {
 
 
   // Posts routes
-  app.get('/getAllPosts', Posts.getAllPosts);
-  app.put('/updateUserPosts/:id', Posts.updateUserPost);
+  app.get('/getAllUserPosts/:id', Posts.getAllUserPosts);
+  app.put('/addNewUserPost/:id', Posts.addNewUserPost);
 
   //User routes
   app.get('/getUser/:id',Users.getUser);
