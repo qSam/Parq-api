@@ -23,7 +23,7 @@ module.exports = function(app) {
   //User routes
   app.get('/getUser/:id',Users.getUser);
   app.get('/getAllUsers', Users.getAllUsers);
-  app.post('/updateUsername/:id', Users.updateUsername);
+  app.put('/updateUsername/:id', Users.updateUsername);
 
   //Sign in routes
   app.post('/signin', requireSignin,Authentication.signin);

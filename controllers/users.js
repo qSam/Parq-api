@@ -25,3 +25,24 @@ exports.getAllUsers = function(req,res, next) {
   });
 
 }
+
+exports.updateUsername = function(req,res,next) {
+  const email = req.params.id;
+  const  username = req.body.username;
+
+  User.findOne({email:email}, function(err, user){
+    if (err) { return next(err) }
+
+    if (user) {
+    user.username = username;
+    user.save();
+    res.send('Username for ' + email + ' updated to ' + username);
+  } else {
+    res.send('User does not exist');
+  }
+
+
+
+
+  });
+}
