@@ -17,13 +17,13 @@ module.exports = function(app) {
 
 
   // Posts routes
-  app.get('/getAllUserPosts/:id', Posts.getAllUserPosts);
-  app.put('/addNewUserPost/:id', Posts.addNewUserPost);
+  app.get('/getAllUserPosts/:id', requireAuth, Posts.getAllUserPosts);
+  app.put('/addNewUserPost/:id', requireAuth, Posts.addNewUserPost);
 
   //User routes
-  app.get('/getUser/:id',Users.getUser);
-  app.get('/getAllUsers', Users.getAllUsers);
-  app.put('/updateUsername/:id', Users.updateUsername);
+  app.get('/getUser/:id', requireAuth, Users.getUser);
+  app.get('/getAllUsers', requireAuth, Users.getAllUsers);
+  app.put('/updateUsername/:id', requireAuth, Users.updateUsername);
 
   //Sign in routes
   app.post('/signin', requireSignin,Authentication.signin);
