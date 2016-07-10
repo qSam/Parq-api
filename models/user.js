@@ -21,13 +21,14 @@ userSchema.pre('save', function(next){
    const user = this;
 
    // Generate a salt
-   bcrypt.genSalt(10, function(err,salt){
+   bcrypt.genSalt(55, function(err,salt){
      if (err) { return next(err) }
-
+     console.log('Pre-save pass : ', user.password)
      //Hash(encrypt) the password using salt
      bcrypt.hash(user.password, salt, null, function(err, hash){
        if (err) { return next(err) }
        //Override with encrypted password
+       console.log('Hash is ', hash)
        user.password = hash;
        next();
      });
@@ -38,7 +39,9 @@ userSchema.pre('save', function(next){
 
 userSchema.methods.comparePassword = function(candidate, callback) {
 
-  bcrypt.compare(candidate, this.password, function(err, isMatch){
+  console.log('This passwod is ', this.password)
+  console.log('Candidate is', candidate)
+  bcrypt.compare(candidate.toString(), this.password, function(err, isMatch){
     if (err) { return callback(err);}
 
     callback(null, isMatch);

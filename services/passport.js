@@ -14,14 +14,16 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
   // Verify username and password, call done with user
   // If incorrect call false;
   User.findOne({email: email}, function(err, user){
-    if (err) { return done(err); }
+    if (err) { return done(err) }
 
-    if(!user) { return done(null, false); }
-
+    if(!user) { return done(null, false) }
+    console.log('Password in strat : ', password)
+    console.log('User is ', user);
     //Compare passwords
     user.comparePassword(password, function(err, isMatch){
+      console.log('Is match: ', isMatch);
       if (err) { return done(err); }
-      if (!isMatch) { return done(null,false); }
+      if (!isMatch) { return done(null,false) }
 
       return done(null, user);
     });
@@ -42,6 +44,7 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done){
   // See if the user ID in the payload exists in our database
   // If it does, call done with user obect
   // otherwise, call done without a user object
+  console.log('APi payload is ', payload);
   User.findById(payload.sub, function(err,user){
     if (err) { return done(err,false); }
 
