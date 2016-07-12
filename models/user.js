@@ -21,7 +21,7 @@ userSchema.pre('save', function(next){
    const user = this;
 
    // Generate a salt
-   bcrypt.genSalt(55, function(err,salt){
+   bcrypt.genSalt(10, function(err,salt){
      if (err) { return next(err) }
      console.log('Pre-save pass : ', user.password)
      //Hash(encrypt) the password using salt
@@ -41,9 +41,9 @@ userSchema.methods.comparePassword = function(candidate, callback) {
 
   console.log('This passwod is ', this.password)
   console.log('Candidate is', candidate)
-  bcrypt.compare(candidate.toString(), this.password, function(err, isMatch){
-    if (err) { return callback(err);}
-
+  bcrypt.compare(candidate, this.password, function(err, isMatch){
+    if (err) { return callback(err)}
+    console.log('Is match comapre', isMatch)
     callback(null, isMatch);
   });
 }
