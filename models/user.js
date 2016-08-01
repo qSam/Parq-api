@@ -20,6 +20,12 @@ userSchema.pre('save', function(next){
    // Get access to the user model
    const user = this;
 
+   //Only Hash the password if it has been modified or it is new
+   if (!user.isModified('password')) {
+     console.log('Password not modified');
+     return next();
+   }
+
    // Generate a salt
    bcrypt.genSalt(10, function(err,salt){
      if (err) { return next(err) }
