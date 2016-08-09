@@ -25,11 +25,16 @@ exports.addNewUserPost = function(req, res, next) {
     if(user){
       user.posts.push({post:post});
       user.save();
-      res.send('Following post added' + post);
+      res.send('Following post added ' + post);
     } else {
       res.send('User not found');
     }
 
   });
+
+}
+
+
+exports.deleteUserPost = function(req,res, next) {
 
 }

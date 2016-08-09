@@ -19,6 +19,7 @@ module.exports = function(app) {
   // Posts routes
   app.get('/getAllUserPosts/:id', requireAuth, Posts.getAllUserPosts);
   app.put('/addNewUserPost/:id', requireAuth, Posts.addNewUserPost);
+  app.delete('/deleteUserPost/:id'), requireAuth, Posts.deleteUserPost);
 
   //User routes
   app.get('/getUser/:id', requireAuth, Users.getUser);
