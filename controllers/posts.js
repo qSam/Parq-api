@@ -40,6 +40,17 @@ exports.deleteUserPost = function(req,res, next) {
   const email = req.body.email;
 
   User.findOne({email:email}, function(err,user){
+    if (err)  { return next(err) }
+
+    if(user) {
+      user.posts.remove({_id:postId}, function(err,post){
+
+      });
+
+    } else {
+      res.send('User not found');
+    }
+
 
   });
 
