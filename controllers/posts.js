@@ -36,5 +36,11 @@ exports.addNewUserPost = function(req, res, next) {
 
 
 exports.deleteUserPost = function(req,res, next) {
+  const postId = req.params.id;
+  const email = req.body.email;
+
+  User.findOne({email:email}, function(err,user){
+
+  });
 
 }
