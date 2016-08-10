@@ -44,7 +44,9 @@ exports.deleteUserPost = function(req,res, next) {
 
     if(user) {
       user.posts.remove({_id:postId}, function(err,post){
+          if  (err) { return next(err) }
 
+          res.send('Sucessfully deleleted');
       });
 
     } else {
