@@ -36,24 +36,22 @@ exports.addNewUserPost = function(req, res, next) {
 
 
 exports.deleteUserPost = function(req,res, next) {
-  const postId = req.params.id;
-  const email = req.body.email;
+  const email = req.params.id;
+  const postId = req.body.postId;
+
+
+
 
   User.findOne({email:email}, function(err,user){
     if (err)  { return next(err) }
 
-    if(user) {
-      user.posts.remove({_id:postId}, function(err,post){
-          if  (err) { return next(err) }
-
-          res.send('Sucessfully deleleted');
-      });
-
+    if(user){
+          user.posts.pull({_id:postId});
+          user.save();
+          res.send('Pilot deleted');
     } else {
-      res.send('User not found');
+        res.send('User not found');
     }
-
-
   });
 
 }
