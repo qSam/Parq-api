@@ -1,8 +1,8 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/Cellar/node/5.4.1/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'start',
-1 verbose cli   'dev' ]
+1 verbose cli   'run',
+1 verbose cli   'start' ]
 2 info using npm@3.8.2
 3 info using node@v5.4.1
 4 verbose stack Error: missing script: start
@@ -18,7 +18,7 @@
 4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:401:12)
 5 verbose cwd /Users/laghariq/Documents/ParqApi/parq-api
 6 error Darwin 15.5.0
-7 error argv "/usr/local/Cellar/node/5.4.1/bin/node" "/usr/local/bin/npm" "start" "dev"
+7 error argv "/usr/local/Cellar/node/5.4.1/bin/node" "/usr/local/bin/npm" "run" "start"
 8 error node v5.4.1
 9 error npm  v3.8.2
 10 error missing script: start

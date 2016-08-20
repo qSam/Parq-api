@@ -29,7 +29,7 @@ exports.signup = function(req,res,next) {
     }
 
     if(userFound) {
-      return res.status(422).send( {error: 'Emain in use'});
+      return res.status(422).send( {error: 'Email in use'});
     }
 
       //If new user, create and save user record
