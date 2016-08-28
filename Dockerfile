@@ -13,4 +13,4 @@ COPY . /usr/src/app
 
 EXPOSE 3090
 
-RUN npm dev
+CMD node index.js
