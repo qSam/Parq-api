@@ -24,3 +24,12 @@ Creating a API Server
 9) Define Mongoose Models for MongoDB Documents
 
 10) Install and Setup MongoDB. Run mongod command to start mongoDB
+
+  ------------------------
+
+To run the Node app with Docker:  
+1) Install Docker : https://www.docker.com  
+2) Build Docker Image from Dockerfile: docker build -t parq .  
+3) Run Docker Image inside Docker container and link it to MongoDB:  
+docker run --rm --name -it --link db:db -p 3090:3090 parq  
+  
