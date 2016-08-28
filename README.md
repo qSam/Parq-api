@@ -34,4 +34,4 @@ To run the Node app with Docker:
  docker build -t parq .  
 
 3) Run Docker Image inside Docker container and link it to MongoDB:  
-docker run --rm --name -it --link db:db -p 3090:3090 parq  
+docker run --rm --name web -it --link db:db -p 3090:3090 parq  
