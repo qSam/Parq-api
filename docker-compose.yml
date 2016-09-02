@@ -1,0 +1,9 @@
+web:
+    build: .
+    links:
+      - db
+    ports:
+      - '3090:3090'
+    command: node index.js
+db:
+  image: mongo
